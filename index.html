@@ -3,17 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- reset -->
     <link rel="stylesheet" href="./css/reset.css" />
+    <!-- flicking -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@egjs/flicking/dist/flicking.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@egjs/flicking/dist/flicking-inline.css"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://unpkg.com/@egjs/flicking/dist/flicking.pkgd.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://naver.github.io/egjs-flicking-plugins/release/latest/dist/plugins.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- style -->
     <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- icon -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <!-- js -->
+    <script src="./js/carousel.js" defer></script>
     <title>dapara</title>
   </head>
   <body>
     <header>
-      <nav class="header_inner">
+      <nav class="header_top">
         <span class="material-symbols-outlined"> menu </span>
         <h1>
           <a href="#"> <img src="./img/로고.png" alt="logo" /></a>
@@ -24,9 +49,41 @@
           placeholder="어떤 상품을 찾으시나요"
           aria-label="사이트 상품을 검색"
         />
-        <div class="button_area"></div>
+        <div class="button_area">
+          <span class="material-symbols-outlined"> person </span>
+          <span class="material-symbols-outlined"> shopping_cart </span>
+          <span class="material-symbols-outlined"> list_alt </span>
+        </div>
+      </nav>
+      <nav class="header_bottom between">
+        <ul class="between gap20">
+          <li><a href="#">로켓배송</a></li>
+          <li><a href="#">로켓직구</a></li>
+          <li><a href="#">베스트</a></li>
+          <li><a href="#">특가</a></li>
+          <li><a href="#">이벤트/쿠폰</a></li>
+        </ul>
+        <ul class="between gap20">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
       </nav>
     </header>
-    <section class="banner"></section>
+    <section class="banner">
+      <div id="carousel" class="flicking-viewport">
+        <div class="flicking-camera">
+          <div class="panel">
+            <img src="./img/banner 1.png" alt="banner1" />
+          </div>
+          <div class="panel">
+            <img src="./img/banner 2.png" alt="banner2" />
+          </div>
+          <div class="panel">
+            <img src="./img/banner 3.png" alt="banner3" />
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

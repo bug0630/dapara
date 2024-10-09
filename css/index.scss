@@ -1,0 +1,13 @@
+@import "./root.scss";
+.banner {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  .flicking-viewport {
+    width: 1280px;
+    margin: 0 auto;
+  }
+  img {
+    height: 100%;
+  }
+}
