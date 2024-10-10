@@ -55,17 +55,12 @@ a {
   align-items: center;
 }
 
-.flicking-viewport {
-  width: 100%;
-  overflow: hidden;
-}
-
 .panel {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 .panel a {
   display: flex;
@@ -74,31 +69,8 @@ a {
   -webkit-user-drag: none;
 }
 .panel img {
-  width: 100%;
   cursor: pointer;
   -webkit-user-drag: none;
-}
-
-.flicking-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.flicking-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  background-color: #808080;
-}
-
-.flicking-pagination-bullet-active {
-  display: block;
-  width: 20px;
-  height: 8px;
-  border-radius: 10px;
-  background-color: #c43663;
 }
 
 .material-symbols-outlined {

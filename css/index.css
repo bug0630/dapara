@@ -1,108 +1,16 @@
-@font-face {
-  font-family: "GmarketSansMedium";
-  src: url("../fonts/GmarketSansTTFMedium.ttf") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "GmarketSansBold";
-  src: url("../fonts/GmarketSansTTFBold.ttf") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "GmarketSansLight";
-  src: url("../fonts/GmarketSansTTFLight.ttf") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-* {
-  box-sizing: border-box;
-  font-family: GmarketSansMedium;
-}
-
-body {
-  font-family: gmarketSansMedium;
-}
-
-a {
-  all: unset;
-  cursor: pointer;
-}
-
-.between {
-  display: flex;
-  justify-content: space-between;
-}
-
-.center {
-  display: flex;
-  align-items: center;
-}
-
-.width {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.gap20 {
-  gap: 20px;
-}
-
-.flicking-camera {
-  display: flex;
-  align-items: center;
-}
-
-.panel {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.panel a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-user-drag: none;
-}
-.panel img {
-  cursor: pointer;
-  -webkit-user-drag: none;
-}
-
-.flicking-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.flicking-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  background-color: #808080;
-}
-
-.flicking-pagination-bullet-active {
-  display: block;
-  width: 20px;
-  height: 8px;
-  border-radius: 10px;
-  background-color: #c43663;
-}
-
 .banner {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
 }
 .banner .flicking-viewport {
-  width: 1280px;
+  width: 100%;
+  aspect-ratio: 128/50;
+  min-height: 500px;
   margin: 0 auto;
+}
+.banner .panel {
+  overflow: hidden;
 }
 .banner img {
   height: 100%;
