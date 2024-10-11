@@ -40,7 +40,7 @@ a {
   align-items: center;
 }
 
-.width, header .header_bottom, header .header_top {
+.width, header .header_top {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -83,12 +83,12 @@ header {
   width: 100%;
   height: clamp(100px, 9vw, 120px);
   top: 0;
+  background-color: white;
   z-index: 10;
 }
 header .header_top {
   padding: 0 clamp(20px, 3vw, 40px);
   height: 70%;
-  border-bottom: 1px solid gray;
 }
 header .header_top h1 {
   height: 50%;
@@ -107,5 +107,5 @@ header .header_top #user-search {
 header .header_bottom {
   height: 30%;
   padding: 0 clamp(20px, 3vw, 40px);
-  border-bottom: 1px solid gray;
+  border-top: 1px solid rgb(190, 190, 190);
 }/*# sourceMappingURL=header.css.map */

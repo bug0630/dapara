@@ -1,0 +1,38 @@
+.banner {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 787px) {
+  .banner #carousel2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 786px) {
+  .banner #carousel1 {
+    display: none;
+  }
+}
+.banner .flicking-viewport {
+  width: 100%;
+  min-height: 500px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 787px) {
+  .banner .flicking-viewport {
+    aspect-ratio: 128/50;
+  }
+}
+.banner .panel {
+  overflow: hidden;
+}
+.banner img {
+  height: 100%;
+}
+@media screen and (max-width: 786px) {
+  .banner img {
+    width: 100%;
+    min-width: 600px;
+    height: auto;
+  }
+}/*# sourceMappingURL=index.css.map */

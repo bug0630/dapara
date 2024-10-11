@@ -1,14 +1,14 @@
-@import "./root.scss";
+@import "../css/root.scss";
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   cursor: pointer;
 }
-
 header {
   position: sticky;
   width: 100%;
   height: $header-height;
   top: 0;
+  background-color: white;
   z-index: 10;
   .header_top {
     @extend .width;
@@ -16,7 +16,6 @@ header {
     @extend .center;
     padding: 0 $side-padding;
     height: 70%;
-    border-bottom: 1px solid gray;
     h1 {
       height: 50%;
       a,
@@ -33,10 +32,9 @@ header {
     }
   }
   .header_bottom {
-    @extend .width;
     @extend .center;
     height: 30%;
     padding: 0 $side-padding;
-    border-bottom: 1px solid gray;
+    border-top: 1px solid rgb(190, 190, 190);
   }
 }
