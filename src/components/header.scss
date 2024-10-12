@@ -1,23 +1,26 @@
 @import "../css/root.scss";
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-  cursor: pointer;
-}
 header {
   position: sticky;
   width: 100%;
-  height: $header-height;
+  height: 160px;
   top: 0;
   background-color: white;
   z-index: 10;
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+    cursor: pointer;
+    font-size: 60px;
+  }
+  // header-top
   .header_top {
     @extend .width;
     @extend .between;
     @extend .center;
-    padding: 0 $side-padding;
+    @extend .side;
     height: 70%;
     h1 {
       height: 50%;
+      margin-right: 5vw;
       a,
       img {
         height: 100%;
@@ -25,16 +28,29 @@ header {
     }
     #user-search {
       width: 100%;
-      max-width: 600px;
       border-radius: 30px;
       height: 50%;
-      padding-left: 20px;
+      padding: 0 20px;
+    }
+    .button_area {
+      margin-left: 2vw;
+      flex-shrink: 0;
     }
   }
   .header_bottom {
     @extend .center;
     height: 30%;
-    padding: 0 $side-padding;
+    font-size: 16px;
     border-top: 1px solid rgb(190, 190, 190);
+  }
+  // breakpoint
+  @media screen and (max-width: $mobile) {
+    color: white;
+  }
+  @media screen and (max-width: $tablet) {
+    color: black;
+  }
+  @media screen and (min-width: $pc) {
+    color: black;
   }
 }

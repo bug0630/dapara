@@ -1,5 +1,7 @@
-$header-height: clamp(100px, 9vw, 120px);
 $side-padding: clamp(20px, 3vw, 40px);
+$mobile: 480px;
+$tablet: 1280px;
+$pc: $tablet + 1;
 @font-face {
   font-family: "GmarketSansMedium";
   src: url("../fonts/GmarketSansTTFMedium.ttf") format("woff");
@@ -21,6 +23,7 @@ $side-padding: clamp(20px, 3vw, 40px);
 * {
   box-sizing: border-box;
   font-family: GmarketSansMedium;
+  font-size: 16px;
 }
 body {
   font-family: gmarketSansMedium;
@@ -41,6 +44,9 @@ a {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+}
+.side {
+  padding: 0 $side-padding;
 }
 .gap20 {
   gap: 20px;

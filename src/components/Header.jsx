@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
 import logo from "../img/logo.png";
+
 export default function Header() {
   return (
     <header>
@@ -25,18 +26,34 @@ export default function Header() {
         </div>
       </nav>
       <nav className="header_bottom">
-        <div className="between width">
+        <div className="between width side">
           <ul className="between gap20">
-            <li>로켓배송</li>
-            <li>로켓직구</li>
-            <li>베스트</li>
-            <li>특가</li>
-            <li>이벤트/쿠폰</li>
+            <li>
+              <Link to="/rocket-delivery">로켓배송</Link>
+            </li>
+            <li>
+              <Link to="/rocket-import">로켓직구</Link>
+            </li>
+            <li>
+              <Link to="/best">베스트</Link>
+            </li>
+            <li>
+              <Link to="/special-offers">특가</Link>
+            </li>
+            <li>
+              <Link to="/events-coupons">이벤트/쿠폰</Link>
+            </li>
           </ul>
           <ul className="between gap20">
-            <li>로그인</li>
-            <li>회원가입</li>
-            <li>고객센터</li>
+            <li>
+              <Link to="/login">로그인</Link>
+            </li>
+            <li>
+              <Link to="/signup">회원가입</Link>
+            </li>
+            <li>
+              <Link to="/customer-service">고객센터</Link>
+            </li>
           </ul>
         </div>
       </nav>
