@@ -2,6 +2,9 @@ $side-padding: clamp(20px, 3vw, 40px);
 $mobile: 480px;
 $tablet: 1280px;
 $pc: $tablet + 1;
+$main-color: #ffa7c6;
+$sub-color: #0047ce;
+$gray: #5a5a5a;
 @font-face {
   font-family: "GmarketSansMedium";
   src: url("../fonts/GmarketSansTTFMedium.ttf") format("woff");
@@ -22,11 +25,22 @@ $pc: $tablet + 1;
 }
 * {
   box-sizing: border-box;
-  font-family: GmarketSansMedium;
+  font-family: "GmarketSansLight";
+  font-weight: 600;
   font-size: 16px;
 }
 body {
-  font-family: gmarketSansMedium;
+  font-family: "GmarketSansMedium";
+  font-weight: 500;
+}
+.pink {
+  color: $main-color;
+}
+.blue {
+  color: $sub-color;
+}
+.gray {
+  color: $gray;
 }
 a {
   all: unset;

@@ -18,12 +18,26 @@
 }
 * {
   box-sizing: border-box;
-  font-family: GmarketSansMedium;
+  font-family: "GmarketSansLight";
+  font-weight: 600;
   font-size: 16px;
 }
 
 body {
-  font-family: gmarketSansMedium;
+  font-family: "GmarketSansMedium";
+  font-weight: 500;
+}
+
+.pink {
+  color: #ffa7c6;
+}
+
+.blue {
+  color: #0047ce;
+}
+
+.gray {
+  color: #5a5a5a;
 }
 
 a {

@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header>
       <nav className="header_top">
-        <span className="material-symbols-outlined"> menu </span>
+        <span class="material-symbols-rounded">menu</span>
         <h1>
           <Link to="/">
             <img src={logo} alt="logo" />
