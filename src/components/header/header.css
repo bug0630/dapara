@@ -1,19 +1,19 @@
 @charset "UTF-8";
 @font-face {
   font-family: "GmarketSansMedium";
-  src: url("../fonts/GmarketSansTTFMedium.ttf") format("woff");
+  src: url("/fonts/GmarketSansTTFMedium.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "GmarketSansBold";
-  src: url("../fonts/GmarketSansTTFBold.ttf") format("woff");
+  src: url("/fonts/GmarketSansTTFBold.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "GmarketSansLight";
-  src: url("../fonts/GmarketSansTTFLight.ttf") format("woff");
+  src: url("/fonts/GmarketSansTTFLight.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -25,8 +25,8 @@
 }
 
 body {
-  font-family: "GmarketSansMedium";
-  font-weight: 500;
+  font-family: "GmarketSansLight";
+  font-weight: 600;
 }
 
 .pink {
@@ -34,7 +34,7 @@ body {
 }
 
 .blue {
-  color: #0047ce;
+  color: #004cce;
 }
 
 .gray {
@@ -46,23 +46,28 @@ a {
   cursor: pointer;
 }
 
-.between, header .header_top {
+.between,
+header .header_top {
   display: flex;
   justify-content: space-between;
 }
 
-.center, header .header_bottom, header .header_top {
+.center,
+header .header_bottom,
+header .header_top {
   display: flex;
   align-items: center;
 }
 
-.width, header .header_top {
+.width,
+header .header_top {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.side, header .header_top {
+.side,
+header .header_top {
   padding: 0 clamp(20px, 3vw, 40px);
 }
 
@@ -94,32 +99,31 @@ a {
 }
 
 header {
-  position: sticky;
-  width: 100%;
-  height: 160px;
-  top: 0;
-  background-color: white;
-  z-index: 10;
+  height: 100px;
 }
 header .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 150, "GRAD" 0, "opsz" 24;
   cursor: pointer;
-  font-size: 60px;
+  font-size: 50px;
 }
 header .material-symbols-outlined:hover {
   font-variation-settings: "FILL" 0, "wght" 250, "GRAD" 0, "opsz" 24;
+  color: #ffa7c6;
 }
 header .material-symbols-rounded {
   font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" NaN;
   cursor: pointer;
-  font-size: 60px;
+  font-size: 50px;
 }
 header .header_top {
+  position: sticky;
+  top: 0;
+  height: 50%;
   gap: 20px;
-  height: 70%;
+  margin: 30px auto;
 }
 header .header_top h1 {
-  height: 50%;
+  height: 50px;
 }
 header .header_top h1 a,
 header .header_top h1 img {
@@ -128,10 +132,10 @@ header .header_top h1 img {
 header .header_top #user-search {
   width: 100%;
   border-radius: 30px;
-  height: 50%;
+  height: 100%;
   padding: 0 20px;
   border: 1px solid #5a5a5a;
-  outline: none; /* 기본 outline 제거 */
+  outline: none;
 }
 header .header_top #user-search:focus {
   border: 2px solid #ffa7c6; /* border 속성으로만 테두리 변경 */
@@ -140,9 +144,17 @@ header .header_top .button_area {
   flex-shrink: 0;
 }
 header .header_bottom {
-  height: 30%;
+  height: 50%;
   font-size: 16px;
   border-top: 1px solid rgb(190, 190, 190);
+}
+header .header_bottom li:nth-of-type(1) {
+  font-family: "GmarketSansMedium";
+  color: #004cce;
+}
+header .header_bottom li:hover {
+  color: #ffa7c6;
+  font-family: "GmarketSansMedium";
 }
 @media screen and (max-width: 480px) {
   header {
@@ -158,4 +170,4 @@ header .header_bottom {
   header {
     color: black;
   }
-}/*# sourceMappingURL=header.css.map */
+} /*# sourceMappingURL=header.css.map */

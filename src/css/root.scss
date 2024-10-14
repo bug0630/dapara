@@ -3,7 +3,7 @@ $mobile: 480px;
 $tablet: 1280px;
 $pc: $tablet + 1;
 $main-color: #ffa7c6;
-$sub-color: #0047ce;
+$sub-color: #004cce;
 $gray: #5a5a5a;
 @font-face {
   font-family: "GmarketSansMedium";
@@ -30,8 +30,8 @@ $gray: #5a5a5a;
   font-size: 16px;
 }
 body {
-  font-family: "GmarketSansMedium";
-  font-weight: 500;
+  font-family: "GmarketSansLight";
+  font-weight: 600;
 }
 .pink {
   color: $main-color;
