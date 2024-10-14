@@ -17,20 +17,22 @@ header {
   }
   // header-top
   .header_top {
-    width: 100%;
     @extend .center;
-    @extend .side;
-    background-color: white;
+    width: 100%;
     height: 110px;
-    gap: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    background-color: white;
     h1 {
       height: 50px;
       a,
       img {
         height: 100%;
       }
+    }
+    .wrap {
+      @extend .center;
+      @extend .side;
+      height: 50%;
+      gap: 20px;
     }
     #user-search {
       width: 100%;
@@ -49,12 +51,8 @@ header {
   }
   .fixed {
     position: fixed;
+    height: 80px;
     top: 0;
-    height: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
   .header_bottom {
     @extend .center;

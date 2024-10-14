@@ -5,7 +5,6 @@ import logo from "../../img/logo.png";
 
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -24,8 +23,9 @@ export default function Header() {
 
   return (
     <header>
-      <div className="width">
-        <nav className={`header_top ${isFixed ? "fixed" : ""}`}>
+      <nav className={`header_top ${isFixed ? "fixed" : ""}`}>
+        <div className="width wrap">
+          {" "}
           <span className="material-symbols-rounded">menu</span>
           <h1>
             <Link to="/">
@@ -43,9 +43,8 @@ export default function Header() {
             <span className="material-symbols-outlined">shopping_cart</span>
             <span className="material-symbols-outlined">list_alt</span>
           </div>
-        </nav>
-      </div>
-
+        </div>
+      </nav>
       <nav className="header_bottom">
         <div className="between width side">
           <ul className="between gap20">
