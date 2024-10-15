@@ -27,11 +27,12 @@ $gray: #5a5a5a;
   box-sizing: border-box;
   font-family: "GmarketSansLight";
   font-weight: 600;
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
 }
 body {
   font-family: "GmarketSansLight";
   font-weight: 600;
+  font-size: clamp(14px, 2vw, 16px);
 }
 .pink {
   color: $main-color;
@@ -62,9 +63,20 @@ a {
 .side {
   padding: 0 $side-padding;
 }
-.gap20 {
-  gap: 20px;
+.gap {
+  gap: clamp(10px, 3vw, 20px);
 }
+.mob_ui {
+  @media screen and (min-width: $pc) {
+    display: none;
+  }
+}
+.pc_ui {
+  @media screen and (max-width: $tablet) {
+    display: none;
+  }
+}
+// carousel
 .flicking-camera {
   display: flex;
   align-items: center;

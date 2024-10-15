@@ -1,18 +1,18 @@
 @font-face {
   font-family: "GmarketSansMedium";
-  src: url("./fonts/GmarketSansTTFMedium.ttf") format("woff");
+  src: url("../fonts/GmarketSansTTFMedium.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "GmarketSansBold";
-  src: url("./fonts/GmarketSansTTFBold.ttf") format("woff");
+  src: url("../fonts/GmarketSansTTFBold.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "GmarketSansLight";
-  src: url("./fonts/GmarketSansTTFLight.ttf") format("woff");
+  src: url("../fonts/GmarketSansTTFLight.ttf") format("woff");
   font-weight: normal;
   font-style: normal;
 }
