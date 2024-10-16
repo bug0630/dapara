@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
-import logo from "../../img/logo.png";
+import logo from "../../assets/img/logo.png";
 
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
