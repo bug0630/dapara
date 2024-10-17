@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/dapara/static/css/main.8ae261e7.css",
+    "main.js": "/dapara/static/js/main.b8d06394.js",
+    "static/media/GmarketSansTTFBold.ttf": "/dapara/static/media/GmarketSansTTFBold.69428064ef8eee25be33.ttf",
+    "static/media/GmarketSansTTFMedium.ttf": "/dapara/static/media/GmarketSansTTFMedium.d4bac6b182bed73c9375.ttf",
+    "static/media/GmarketSansTTFLight.ttf": "/dapara/static/media/GmarketSansTTFLight.efaa8f19ead1555b1c39.ttf",
+    "static/media/banner2-2.png": "/dapara/static/media/banner2-2.d8dd9fbe77168f50e059.png",
+    "static/media/banner3-2.png": "/dapara/static/media/banner3-2.2eb6dacdbd14b3737c17.png",
+    "static/media/banner2.png": "/dapara/static/media/banner2.44c8e1d8b536be7ed174.png",
+    "static/media/banner3.png": "/dapara/static/media/banner3.5672b4a9d581f2241b26.png",
+    "static/media/banner1-2.png": "/dapara/static/media/banner1-2.a245a6288037ac8f44f2.png",
+    "static/media/banner1.png": "/dapara/static/media/banner1.daf91c6f303d8461426a.png",
+    "static/media/Component 90.png": "/dapara/static/media/Component 90.e2c0c7ff520bf959632b.png",
+    "static/media/Component 93.png": "/dapara/static/media/Component 93.4859f49a812837767b80.png",
+    "static/media/product4.png": "/dapara/static/media/product4.dc75a438f99acdc47b7e.png",
+    "static/media/product3.png": "/dapara/static/media/product3.d3f46825d1a4e6eaa38a.png",
+    "static/media/product2.png": "/dapara/static/media/product2.13d38f616d910ce5fdb6.png",
+    "static/media/product1.png": "/dapara/static/media/product1.69734bb42cd273e8665d.png",
+    "static/media/logo.png": "/dapara/static/media/logo.abc588b1d175d6d8e5ad.png",
+    "index.html": "/dapara/index.html",
+    "main.8ae261e7.css.map": "/dapara/static/css/main.8ae261e7.css.map",
+    "main.b8d06394.js.map": "/dapara/static/js/main.b8d06394.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ae261e7.css",
+    "static/js/main.b8d06394.js"
+  ]
+}
