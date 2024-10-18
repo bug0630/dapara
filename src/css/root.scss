@@ -76,10 +76,29 @@ a {
     display: none;
   }
 }
-// carousel
-.flicking-camera {
-  display: flex;
-  align-items: center;
+
+.flicking-pagination {
+  @extend .center;
+  justify-content: center;
+  gap: 10px;
+  width: clamp(100px, 30vw, 200px);
+  margin: 0 auto;
+  height: 50px;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  z-index: 1;
+  .flicking-pagination-bullet {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(77, 77, 77, 0.3);
+  }
+}
+.flicking-pagination-fraction {
+  background-color: rgb(77, 77, 77, 0.3);
+  color: white;
+  border-radius: 30px;
 }
 .panel {
   width: 100%;

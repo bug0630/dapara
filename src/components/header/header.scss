@@ -2,6 +2,7 @@
 header {
   position: sticky;
   top: 0;
+  z-index: 10;
   background-color: white;
   .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 150, "GRAD" 0, "opsz" 24;

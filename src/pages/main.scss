@@ -1,23 +1,16 @@
+@import "../css/root.scss";
 .main {
-  .flicking-camera {
-    display: flex;
-    align-items: center;
-  }
   .flicking-viewport {
-    width: 100%;
-    min-height: 500px;
     margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+  }
+  .panel {
+    overflow: hidden;
+    max-width: 1920px;
     @media screen and (min-width: 787px) {
       aspect-ratio: 128/50;
     }
-  }
-  .panel {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
     a {
       display: flex;
       align-items: center;
