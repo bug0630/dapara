@@ -1,0 +1,15 @@
+@import "../../css/root.scss";
+.bot {
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: white;
+  box-shadow: 0 1px 7px 0 $gray;
+}
+@media screen and (min-width: $pc) {
+  .bot {
+    display: none;
+  }
+}

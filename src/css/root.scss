@@ -81,9 +81,8 @@ a {
   @extend .center;
   justify-content: center;
   gap: 10px;
-  width: clamp(100px, 30vw, 200px);
+  padding: 15px clamp(20px, 5vw, 40px);
   margin: 0 auto;
-  height: 50px;
   position: absolute;
   bottom: 5%;
   right: 5%;

@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import "./header.scss";
 import logo from "../../assets/img/logo.png";
 
-export default function Header() {
+export default function Header({ isSearchActive, onSearchToggle }) {
   const [isFixed, setIsFixed] = useState(false);
-  const [isSearchActive, setIsSearchActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,17 +22,12 @@ export default function Header() {
     };
   }, []);
 
-  // Toggle search button click
-  const handleSearchToggle = () => {
-    setIsSearchActive(!isSearchActive);
-  };
-
   return (
     <header>
       <nav
         className={`header_top ${isFixed ? "fixed" : ""} ${
           isSearchActive ? "expanded" : ""
-        }`}
+        } `}
       >
         <div className="width wrap">
           <span className="material-symbols-rounded pc_ui">menu</span>
@@ -92,25 +86,6 @@ export default function Header() {
             </li>
           </ul>
         </div>
-      </nav>
-      <nav className="bot side center between mob_ui">
-        <span className="material-symbols-rounded">menu</span>
-        <span
-          className="material-symbols-outlined"
-          title="검색"
-          onClick={handleSearchToggle}
-        >
-          search
-        </span>
-        <span className="material-symbols-outlined" title="내 정보">
-          person
-        </span>
-        <span className="material-symbols-outlined" title="장바구니">
-          shopping_cart
-        </span>
-        <span className="material-symbols-outlined" title="찜 목록">
-          list_alt
-        </span>
       </nav>
     </header>
   );
