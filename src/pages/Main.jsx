@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../components/header/Header";
 import { useMediaQuery } from "react-responsive";
 import Flicking, { ViewportSlot } from "@egjs/react-flicking";
@@ -10,12 +10,6 @@ import "./main.scss";
 import BottomNav from "../components/header/BottomNav";
 
 export default function Main() {
-  const [isSearchActive, setIsSearchActive] = useState(false);
-
-  const handleSearchToggle = () => {
-    setIsSearchActive(!isSearchActive);
-  };
-
   const isSmallScreen = useMediaQuery({ query: "(max-width: 786px)" });
   const images = require.context("../assets/img", false, /\.(png|jpe?g|svg)$/);
   const plugins = [
@@ -41,10 +35,7 @@ export default function Main() {
 
   return (
     <div className="main">
-      <Header
-        isSearchActive={isSearchActive}
-        onSearchToggle={handleSearchToggle}
-      />
+      <Header />
       {isSmallScreen ? (
         <Flicking plugins={plugins} align="prev" circular={true}>
           {smallBanners.map((banner, index) => (
@@ -69,10 +60,7 @@ export default function Main() {
           </ViewportSlot>
         </Flicking>
       )}
-      <BottomNav
-        isSearchActive={isSearchActive}
-        onSearchToggle={handleSearchToggle}
-      ></BottomNav>
+      <BottomNav></BottomNav>
     </div>
   );
 }

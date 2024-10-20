@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./header.scss";
 import logo from "../../assets/img/logo.png";
 
-export default function Header({ isSearchActive, onSearchToggle }) {
+export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
+  const isSearchActive = useSelector((state) => state.isSearchActive);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,8 +28,8 @@ export default function Header({ isSearchActive, onSearchToggle }) {
     <header>
       <nav
         className={`header_top ${isFixed ? "fixed" : ""} ${
-          isSearchActive ? "expanded" : ""
-        } `}
+          isSearchActive ? "expanded" : "" // isSearchActive를 사용하여 클래스 추가
+        }`}
       >
         <div className="width wrap">
           <span className="material-symbols-rounded pc_ui">menu</span>

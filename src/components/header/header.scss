@@ -83,13 +83,6 @@ header {
     // color: white;
   }
   @media screen and (max-width: $tablet) {
-    .material-symbols-outlined {
-      font-size: clamp(30px, 5vw, 40px);
-    }
-    .material-symbols-rounded {
-      font-size: 30px;
-    }
-
     .header_top {
       height: 0;
       .wrap {

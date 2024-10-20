@@ -1,12 +1,16 @@
 import { Route, Routes } from "react-router";
+import { Provider } from "react-redux";
+import store from "./store/store";
 import "./css/reset.css";
 import Main from "./pages/Main";
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<Main />} />
+        </Routes>
+      </Provider>
     </div>
   );
 }
