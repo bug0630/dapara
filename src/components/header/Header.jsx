@@ -26,10 +26,34 @@ export default function Header() {
       }
     };
 
+    const handleTouchMove = (event) => {
+      const touch = event.touches[0];
+      const deltaY = touch.clientY - (lastTouchY || touch.clientY);
+      lastTouchY = touch.clientY; // 마지막 터치 Y 좌표 업데이트
+
+      if (deltaY > 0) {
+        // 아래로 스크롤할 때
+        if (!isScrollingDown) {
+          setIsFixed(true);
+          isScrollingDown = true;
+        }
+      } else {
+        // 위로 스크롤할 때
+        if (isScrollingDown) {
+          setIsFixed(false);
+          isScrollingDown = false;
+        }
+      }
+    };
+
+    let lastTouchY = null; // 마지막 터치 Y 좌표
+
     window.addEventListener("wheel", handleScroll); // 마우스 휠로 스크롤 방향 감지
+    window.addEventListener("touchmove", handleTouchMove); // 터치로 스크롤 방향 감지
 
     return () => {
       window.removeEventListener("wheel", handleScroll); // 컴포넌트 언마운트 시 이벤트 제거
+      window.removeEventListener("touchmove", handleTouchMove); // 컴포넌트 언마운트 시 이벤트 제거
     };
   }, []);
 
