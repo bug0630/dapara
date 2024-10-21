@@ -8,29 +8,28 @@ export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
   const isSearchActive = useSelector((state) => state.isSearchActive);
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const threshold = 100; // 임계값을 설정 (10px 정도 차이나야 상태 변경)
+    let isScrollingDown = false; // 스크롤 방향 추적용 플래그
 
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrollDifference = currentScrollY - lastScrollY;
-
-      if (Math.abs(scrollDifference) > threshold) {
-        if (scrollDifference > 0) {
-          // 스크롤이 아래로 향할 때
+    const handleScroll = (event) => {
+      if (event.deltaY > 0) {
+        // 아래로 스크롤할 때
+        if (!isScrollingDown) {
           setIsFixed(true);
-        } else {
-          // 스크롤이 위로 향할 때
-          setIsFixed(false);
+          isScrollingDown = true;
         }
-        lastScrollY = currentScrollY; // 현재 스크롤 위치를 저장
+      } else {
+        // 위로 스크롤할 때
+        if (isScrollingDown) {
+          setIsFixed(false);
+          isScrollingDown = false;
+        }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleScroll); // 마우스 휠로 스크롤 방향 감지
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleScroll); // 컴포넌트 언마운트 시 이벤트 제거
     };
   }, []);
 

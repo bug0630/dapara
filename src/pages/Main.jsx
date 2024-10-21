@@ -2,8 +2,7 @@ import React from "react";
 import Header from "../components/header/Header";
 import { useMediaQuery } from "react-responsive";
 import Flicking, { ViewportSlot } from "@egjs/react-flicking";
-import { AutoPlay } from "@egjs/flicking-plugins";
-import { Pagination } from "@egjs/flicking-plugins";
+import { AutoPlay, Arrow, Pagination } from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import Panel from "../components/carousel/Panel";
 import "./main.scss";
@@ -20,6 +19,7 @@ export default function Main() {
       animationDuration: 1000,
     }),
     new Pagination({ type: "fraction" }),
+    new Arrow(),
   ];
   const defaultBanners = [
     images("./banner1.png"),
@@ -42,7 +42,16 @@ export default function Main() {
             <Panel key={index} index={index} imageSrc={banner} />
           ))}
           <ViewportSlot>
-            <div className="flicking-pagination"></div>
+            <div className="control">
+              {" "}
+              <div className="flicking-pagination"></div>
+              <span className="flicking-arrow-prev material-symbols-outlined">
+                arrow_back_ios
+              </span>
+              <span className="flicking-arrow-next  material-symbols-outlined">
+                arrow_forward_ios
+              </span>
+            </div>
           </ViewportSlot>
         </Flicking>
       ) : (
@@ -56,7 +65,16 @@ export default function Main() {
             <Panel key={index} index={index} imageSrc={banner} />
           ))}
           <ViewportSlot>
-            <div className="flicking-pagination"></div>
+            <div className="control">
+              {" "}
+              <div className="flicking-pagination"></div>
+              <span className="flicking-arrow-prev material-symbols-outlined">
+                arrow_back_ios
+              </span>
+              <span className="flicking-arrow-next  material-symbols-outlined">
+                arrow_forward_ios
+              </span>
+            </div>
           </ViewportSlot>
         </Flicking>
       )}
