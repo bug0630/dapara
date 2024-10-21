@@ -1,4 +1,4 @@
-@import "../css/root.scss";
+@use "../css/variable.scss";
 .main {
   .flicking-viewport {
     margin: 0 auto;
@@ -27,5 +27,8 @@
         height: auto;
       }
     }
+  }
+  .list {
+    height: 1000px;
   }
 }

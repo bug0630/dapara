@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import "./css/reset.css";
+import "./css/root.scss";
 import Main from "./pages/Main";
 function App() {
   return (

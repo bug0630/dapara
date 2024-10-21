@@ -7,13 +7,23 @@ import logo from "../../assets/img/logo.png";
 export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
   const isSearchActive = useSelector((state) => state.isSearchActive);
-
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const threshold = 100; // 임계값을 설정 (10px 정도 차이나야 상태 변경)
+
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
+      const currentScrollY = window.scrollY;
+      const scrollDifference = currentScrollY - lastScrollY;
+
+      if (Math.abs(scrollDifference) > threshold) {
+        if (scrollDifference > 0) {
+          // 스크롤이 아래로 향할 때
+          setIsFixed(true);
+        } else {
+          // 스크롤이 위로 향할 때
+          setIsFixed(false);
+        }
+        lastScrollY = currentScrollY; // 현재 스크롤 위치를 저장
       }
     };
 
@@ -27,11 +37,11 @@ export default function Header() {
   return (
     <header>
       <nav
-        className={`header_top ${isFixed ? "fixed" : ""} ${
+        className={`header_top center  ${isFixed ? "hide" : ""} ${
           isSearchActive ? "expanded" : "" // isSearchActive를 사용하여 클래스 추가
         }`}
       >
-        <div className="width wrap">
+        <div className="width wrap side center">
           <span className="material-symbols-rounded pc_ui">menu</span>
           <h1>
             <Link to="/">
@@ -57,7 +67,7 @@ export default function Header() {
           </div>
         </div>
       </nav>
-      <nav className="header_bottom">
+      <nav className={`header_bottom center`}>
         <div className="mob_tap between width side">
           <ul className="between gap">
             <li>

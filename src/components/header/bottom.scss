@@ -1,26 +1,32 @@
-@import "../../css/root.scss";
+@use "../../css/variable.scss" as variable;
+
 .bot {
   position: sticky;
   bottom: 0;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: white;
-  box-shadow: 0 1px 7px 0 $gray;
+  box-shadow: 0 1px 7px 0 variable.$gray;
+  z-index: 10;
+
   .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 150, "GRAD" 0, "opsz" 24;
     cursor: pointer;
     font-size: clamp(30px, 5vw, 40px);
+
     &:hover {
       font-variation-settings: "FILL" 0, "wght" 250, "GRAD" 0, "opsz" 24;
-      color: $main-color;
+      color: variable.$main-color;
     }
   }
+
   .material-symbols-rounded {
     font-size: clamp(30px, 5vw, 40px);
     cursor: pointer;
   }
 }
-@media screen and (min-width: $pc) {
+
+@media screen and (min-width: variable.$pc) {
   .bot {
     display: none;
   }

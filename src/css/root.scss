@@ -1,10 +1,4 @@
-$side-padding: clamp(20px, 3vw, 40px);
-$mobile: 480px;
-$tablet: 1280px;
-$pc: $tablet + 1;
-$main-color: #ffa7c6;
-$sub-color: #004cce;
-$gray: #5a5a5a;
+@import "./variable.scss";
 @font-face {
   font-family: "GmarketSansMedium";
   src: url("../fonts/GmarketSansTTFMedium.ttf") format("woff");
@@ -78,7 +72,8 @@ a {
 }
 
 .flicking-pagination {
-  @extend .center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 15px clamp(20px, 5vw, 40px);
