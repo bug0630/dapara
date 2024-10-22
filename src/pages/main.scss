@@ -1,29 +1,40 @@
 @use "../css/variable.scss";
 .main {
-  .material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-    font-size: inherit;
-  }
-
   .flicking-viewport {
     margin: 0 auto;
     width: 100%;
     max-width: 1920px;
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 24;
+      font-size: inherit;
+    }
   }
-
+  .arrow {
+    display: flex;
+    gap: 10px;
+    bottom: 5%;
+    right: 2%;
+  }
+  .flicking-pagination {
+    @media screen and (min-width: 787px) {
+      left: 2%;
+      bottom: 5%;
+    }
+    @media screen and (max-width: 786px) {
+      top: 3%;
+      right: 2%;
+    }
+  }
   .control {
     position: absolute;
-    bottom: 5%;
-    right: 5%;
     z-index: 1;
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 15px clamp(20px, 5vw, 40px);
+    padding: 15px clamp(20px, 3vw, 40px);
     background-color: rgb(77, 77, 77, 0.3);
     color: white;
     border-radius: 30px;
-    font-size: 16px;
   }
   .panel {
     overflow: hidden;

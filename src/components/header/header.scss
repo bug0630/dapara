@@ -5,7 +5,7 @@ header {
   top: 0;
   z-index: 10;
   background-color: white;
-  box-shadow: 0 1px 7px 0 variable.$gray; // 네임스페이스 사용
+  box-shadow: 0 1px 7px 0 variable.$gray;
 
   .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 150, "GRAD" 0, "opsz" 24;
@@ -13,10 +13,9 @@ header {
     font-size: 50px;
     &:hover {
       font-variation-settings: "FILL" 0, "wght" 250, "GRAD" 0, "opsz" 24;
-      color: variable.$main-color; // 네임스페이스 사용
+      color: variable.$main-color;
     }
   }
-
   // header-top
   .header_top {
     width: 100%;

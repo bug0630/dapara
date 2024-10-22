@@ -9,18 +9,20 @@ export default function Header() {
   const isSearchActive = useSelector((state) => state.isSearchActive);
   useEffect(() => {
     let isScrollingDown = false; // 스크롤 방향 추적용 플래그
+    let lastTouchY = null; // 마지막 터치 Y 좌표
+    const threshold = 20; // 임계값 설정
 
     const handleScroll = (event) => {
-      if (event.deltaY > 0) {
-        // 아래로 스크롤할 때
+      if (event.deltaY > threshold) {
+        // 아래로 스크롤할 때 (임계값을 넘을 경우)
         if (!isScrollingDown) {
-          setIsFixed(true);
+          setIsFixed(true); // 아래로 스크롤할 때는 true로 설정
           isScrollingDown = true;
         }
-      } else {
-        // 위로 스크롤할 때
+      } else if (event.deltaY < -threshold) {
+        // 위로 스크롤할 때 (임계값을 넘을 경우)
         if (isScrollingDown) {
-          setIsFixed(false);
+          setIsFixed(false); // 위로 스크롤할 때는 false로 설정
           isScrollingDown = false;
         }
       }
@@ -28,32 +30,30 @@ export default function Header() {
 
     const handleTouchMove = (event) => {
       const touch = event.touches[0];
-      const deltaY = touch.clientY - (lastTouchY || touch.clientY);
+      const deltaY = lastTouchY !== null ? touch.clientY - lastTouchY : 0;
       lastTouchY = touch.clientY; // 마지막 터치 Y 좌표 업데이트
 
-      if (deltaY > 0) {
-        // 아래로 스크롤할 때
+      if (deltaY > threshold) {
+        // 아래로 스크롤할 때 (임계값을 넘을 경우)
         if (!isScrollingDown) {
-          setIsFixed(true);
+          setIsFixed(true); // 아래로 스크롤할 때는 true로 설정
           isScrollingDown = true;
         }
-      } else {
-        // 위로 스크롤할 때
+      } else if (deltaY < -threshold) {
+        // 위로 스크롤할 때 (임계값을 넘을 경우)
         if (isScrollingDown) {
-          setIsFixed(false);
+          setIsFixed(false); // 위로 스크롤할 때는 false로 설정
           isScrollingDown = false;
         }
       }
     };
 
-    let lastTouchY = null; // 마지막 터치 Y 좌표
-
-    window.addEventListener("wheel", handleScroll); // 마우스 휠로 스크롤 방향 감지
-    window.addEventListener("touchmove", handleTouchMove); // 터치로 스크롤 방향 감지
+    window.addEventListener("wheel", handleScroll); // 마우스 휠 이벤트 추가
+    window.addEventListener("touchmove", handleTouchMove); // 터치 이동 이벤트 추가
 
     return () => {
-      window.removeEventListener("wheel", handleScroll); // 컴포넌트 언마운트 시 이벤트 제거
-      window.removeEventListener("touchmove", handleTouchMove); // 컴포넌트 언마운트 시 이벤트 제거
+      window.removeEventListener("wheel", handleScroll); // 이벤트 제거
+      window.removeEventListener("touchmove", handleTouchMove); // 이벤트 제거
     };
   }, []);
 

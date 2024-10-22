@@ -42,9 +42,8 @@ export default function Main() {
             <Panel key={index} index={index} imageSrc={banner} />
           ))}
           <ViewportSlot>
-            <div className="control">
-              {" "}
-              <div className="flicking-pagination"></div>
+            <div className="flicking-pagination control"></div>
+            <div className="arrow control">
               <span className="flicking-arrow-prev material-symbols-outlined">
                 arrow_back_ios
               </span>
@@ -65,9 +64,8 @@ export default function Main() {
             <Panel key={index} index={index} imageSrc={banner} />
           ))}
           <ViewportSlot>
-            <div className="control">
-              {" "}
-              <div className="flicking-pagination"></div>
+            <div className="flicking-pagination control"></div>
+            <div className="arrow control">
               <span className="flicking-arrow-prev material-symbols-outlined">
                 arrow_back_ios
               </span>
