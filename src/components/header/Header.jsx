@@ -9,40 +9,35 @@ export default function Header() {
   const isSearchActive = useSelector((state) => state.isSearchActive);
   useEffect(() => {
     let isScrollingDown = false; // 스크롤 방향 추적용 플래그
-    let lastTouchY = null; // 마지막 터치 Y 좌표
-    const threshold = 20; // 임계값 설정
+    const touchThreshold = 20; // 터치 스크롤 임계값
 
     const handleScroll = (event) => {
-      if (event.deltaY > threshold) {
-        // 아래로 스크롤할 때 (임계값을 넘을 경우)
+      const deltaY = event.deltaY;
+
+      if (deltaY > 1) {
         if (!isScrollingDown) {
-          setIsFixed(true); // 아래로 스크롤할 때는 true로 설정
+          setIsFixed(true); // 아래로 스크롤할 때 true로 설정
           isScrollingDown = true;
         }
-      } else if (event.deltaY < -threshold) {
-        // 위로 스크롤할 때 (임계값을 넘을 경우)
+      } else if (deltaY < 0) {
         if (isScrollingDown) {
-          setIsFixed(false); // 위로 스크롤할 때는 false로 설정
+          setIsFixed(false); // 위로 스크롤할 때 false로 설정
           isScrollingDown = false;
         }
       }
     };
 
     const handleTouchMove = (event) => {
-      const touch = event.touches[0];
-      const deltaY = lastTouchY !== null ? touch.clientY - lastTouchY : 0;
-      lastTouchY = touch.clientY; // 마지막 터치 Y 좌표 업데이트
+      const deltaY = event.touches[0].clientY; // 터치 Y 좌표만 사용
 
-      if (deltaY > threshold) {
-        // 아래로 스크롤할 때 (임계값을 넘을 경우)
+      if (deltaY > touchThreshold) {
         if (!isScrollingDown) {
-          setIsFixed(true); // 아래로 스크롤할 때는 true로 설정
+          setIsFixed(true); // 임계값 넘으면 true 설정
           isScrollingDown = true;
         }
-      } else if (deltaY < -threshold) {
-        // 위로 스크롤할 때 (임계값을 넘을 경우)
+      } else if (deltaY < -touchThreshold) {
         if (isScrollingDown) {
-          setIsFixed(false); // 위로 스크롤할 때는 false로 설정
+          setIsFixed(false); // 임계값 넘으면 false 설정
           isScrollingDown = false;
         }
       }
