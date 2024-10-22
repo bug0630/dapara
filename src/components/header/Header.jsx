@@ -8,34 +8,27 @@ export default function Header() {
   const [isFixed, setIsFixed] = useState(false);
   const isSearchActive = useSelector((state) => state.isSearchActive);
   useEffect(() => {
-    let isScrollingDown = false; // 스크롤 방향 추적용 플래그
+    let timeoutId = null; // 타이머 ID 저장
 
-    const handleScroll = (event) => {
-      const deltaY =
-        event.deltaY || (event.touches && event.touches[0].clientY);
+    const handleScroll = () => {
+      if (timeoutId) return; // 이미 타이머가 설정되었으면 무시
 
-      if (deltaY > 1) {
-        if (!isScrollingDown) {
-          setIsFixed(true); // 아래로 스크롤할 때 true로 설정
-          isScrollingDown = true;
-        }
-      } else if (deltaY < 0) {
-        if (isScrollingDown) {
-          setIsFixed(false); // 위로 스크롤할 때 false로 설정
-          isScrollingDown = false;
-        }
-      }
+      timeoutId = setTimeout(() => {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        setIsFixed(scrollTop > 0); // 스크롤 위치가 1보다 크면 true, 아니면 false
+
+        timeoutId = null; // 타이머 종료 후 초기화
+      }, 150); // 0.5초 (500ms) 간격
     };
 
-    window.addEventListener("wheel", handleScroll); // 마우스 휠 이벤트 추가
-    window.addEventListener("touchmove", handleScroll); // 터치 이동 이벤트 추가
+    window.addEventListener("scroll", handleScroll); // 스크롤 이벤트 추가
 
     return () => {
-      window.removeEventListener("wheel", handleScroll); // 이벤트 제거
-      window.removeEventListener("touchmove", handleScroll); // 이벤트 제거
+      window.removeEventListener("scroll", handleScroll); // 이벤트 제거
+      if (timeoutId) clearTimeout(timeoutId); // 컴포넌트 언마운트 시 타이머 제거
     };
   }, []);
-
   return (
     <header>
       <nav
