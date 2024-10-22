@@ -1,12 +1,11 @@
 @use "../../css/variable.scss";
+.index {
+  z-index: 20;
+}
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
   background-color: white;
-  box-shadow: 0 1px 7px 0 variable.$gray;
-
+  z-index: 10;
   .material-symbols-outlined {
     font-variation-settings: "FILL" 0, "wght" 150, "GRAD" 0, "opsz" 24;
     cursor: pointer;
@@ -22,9 +21,6 @@ header {
     height: 110px;
     background-color: white;
     overflow: hidden;
-    &.hide {
-      height: 0;
-    }
     h1 {
       height: 50px;
       a,
@@ -41,16 +37,15 @@ header {
       height: 50%;
       gap: 20px;
     }
-
     #user-search {
       width: 100%;
       border-radius: 30px;
       height: 100%;
       padding: 0 20px;
-      border: 1px solid variable.$gray; // 네임스페이스 사용
+      border: 1px solid variable.$gray;
       outline: none;
       &:focus {
-        border: 2px solid variable.$main-color; // 네임스페이스 사용
+        border: 2px solid variable.$main-color;
       }
     }
 
@@ -58,23 +53,6 @@ header {
       flex-shrink: 0;
     }
   }
-
-  .header_bottom {
-    height: 50px;
-    border-top: 1px solid rgb(190, 190, 190);
-    background-color: white;
-
-    li:nth-of-type(1) {
-      font-family: "GmarketSansMedium";
-      color: variable.$sub-color; // 네임스페이스 사용
-    }
-
-    li:hover {
-      color: variable.$main-color; // 네임스페이스 사용
-      font-family: "GmarketSansMedium";
-    }
-  }
-
   // bottom nav
   .bot {
     position: fixed;
@@ -95,7 +73,7 @@ header {
   @media screen and (max-width: variable.$tablet) {
     // 네임스페이스 사용
     .header_top {
-      height: clamp(40px, 5vw, 50px);
+      height: clamp(50px, 5vw, 80px);
 
       .wrap {
         height: 80%;
@@ -104,9 +82,10 @@ header {
       h1 {
         height: 100%;
       }
-
-      &.expanded {
-        height: clamp(40px, 5vw, 50px);
+      .sticky {
+        position: -webkit-sticky; /* 사파리 지원 */
+        position: sticky;
+        top: 0;
       }
     }
 
@@ -120,8 +99,6 @@ header {
   }
 
   @media screen and (min-width: variable.$pc) {
-    // 네임스페이스 사용
-
     .bot {
       display: none;
     }

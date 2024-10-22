@@ -9,13 +9,14 @@
       font-size: inherit;
     }
   }
-  .arrow {
-    display: flex;
-    gap: 10px;
-    bottom: 5%;
-    right: 2%;
-  }
   .flicking-pagination {
+    position: absolute;
+    gap: 10px;
+    padding: 15px clamp(20px, 3vw, 40px);
+    background-color: rgb(77, 77, 77, 0.3);
+    color: white;
+    border-radius: 30px;
+    z-index: 1;
     @media screen and (min-width: 787px) {
       left: 2%;
       bottom: 5%;
@@ -27,6 +28,8 @@
   }
   .control {
     position: absolute;
+    bottom: 5%;
+    right: 2%;
     z-index: 1;
     display: flex;
     align-items: center;

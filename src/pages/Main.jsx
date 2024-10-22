@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/header/Header";
+import HeaderNav from "../components/header/HeaderNav";
 import { useMediaQuery } from "react-responsive";
 import Flicking, { ViewportSlot } from "@egjs/react-flicking";
 import { AutoPlay, Arrow, Pagination } from "@egjs/flicking-plugins";
@@ -7,6 +8,7 @@ import "@egjs/react-flicking/dist/flicking.css";
 import Panel from "../components/carousel/Panel";
 import "./main.scss";
 import BottomNav from "../components/header/BottomNav";
+import Control from "../components/carousel/Control";
 
 export default function Main() {
   const isSmallScreen = useMediaQuery({ query: "(max-width: 786px)" });
@@ -36,21 +38,15 @@ export default function Main() {
   return (
     <div className="main">
       <Header />
+      <HeaderNav></HeaderNav>
       {isSmallScreen ? (
         <Flicking plugins={plugins} align="prev" circular={true}>
           {smallBanners.map((banner, index) => (
             <Panel key={index} index={index} imageSrc={banner} />
           ))}
           <ViewportSlot>
-            <div className="flicking-pagination control"></div>
-            <div className="arrow control">
-              <span className="flicking-arrow-prev material-symbols-outlined">
-                arrow_back_ios
-              </span>
-              <span className="flicking-arrow-next  material-symbols-outlined">
-                arrow_forward_ios
-              </span>
-            </div>
+            <div className="flicking-pagination"></div>
+            <Control></Control>
           </ViewportSlot>
         </Flicking>
       ) : (
@@ -64,15 +60,8 @@ export default function Main() {
             <Panel key={index} index={index} imageSrc={banner} />
           ))}
           <ViewportSlot>
-            <div className="flicking-pagination control"></div>
-            <div className="arrow control">
-              <span className="flicking-arrow-prev material-symbols-outlined">
-                arrow_back_ios
-              </span>
-              <span className="flicking-arrow-next  material-symbols-outlined">
-                arrow_forward_ios
-              </span>
-            </div>
+            <div className="flicking-pagination "></div>
+            <Control></Control>
           </ViewportSlot>
         </Flicking>
       )}

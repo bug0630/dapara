@@ -1,0 +1,29 @@
+@use "../../css/variable.scss";
+.sticky {
+  position: -webkit-sticky; /* 사파리 지원 */
+  position: sticky;
+  top: 0;
+}
+.header_bottom {
+  height: 50px;
+  border-top: 1px solid rgb(190, 190, 190);
+  background-color: white;
+
+  li:nth-of-type(1) {
+    font-family: "GmarketSansMedium";
+    color: variable.$sub-color; // 네임스페이스 사용
+  }
+
+  li:hover {
+    color: variable.$main-color; // 네임스페이스 사용
+    font-family: "GmarketSansMedium";
+  }
+  @media screen and (max-width: variable.$tablet) {
+    .header_bottom {
+      height: clamp(30px, 6vw, 50px);
+    }
+    .mob_tap {
+      justify-content: center;
+    }
+  }
+}
