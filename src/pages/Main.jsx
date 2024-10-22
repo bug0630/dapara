@@ -6,12 +6,12 @@ import Flicking, { ViewportSlot } from "@egjs/react-flicking";
 import { AutoPlay, Arrow, Pagination } from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import Panel from "../components/carousel/Panel";
-import "./main.scss";
 import BottomNav from "../components/header/BottomNav";
 import Control from "../components/carousel/Control";
-
+import Footer from "../components/footer/Footer";
+import "./main.scss";
 export default function Main() {
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 786px)" });
+  const smallScreen = useMediaQuery({ query: "(max-width: 786px)" });
   const images = require.context("../assets/img", false, /\.(png|jpe?g|svg)$/);
   const plugins = [
     new AutoPlay({
@@ -39,7 +39,7 @@ export default function Main() {
     <div className="main">
       <Header />
       <HeaderNav></HeaderNav>
-      {isSmallScreen ? (
+      {smallScreen ? (
         <Flicking plugins={plugins} align="prev" circular={true}>
           {smallBanners.map((banner, index) => (
             <Panel key={index} index={index} imageSrc={banner} />
@@ -52,7 +52,7 @@ export default function Main() {
       ) : (
         ""
       )}
-      {isSmallScreen ? (
+      {smallScreen ? (
         ""
       ) : (
         <Flicking plugins={plugins} align="prev" circular={true}>
@@ -67,6 +67,7 @@ export default function Main() {
       )}
       <section className="list"></section>
       <BottomNav></BottomNav>
+      <Footer></Footer>
     </div>
   );
 }

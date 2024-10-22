@@ -1,5 +1,6 @@
 @use "../css/variable.scss";
 .main {
+  // Carousel
   .flicking-viewport {
     margin: 0 auto;
     width: 100%;
@@ -62,6 +63,7 @@
       }
     }
   }
+  // listSection
   .list {
     height: 1000px;
   }
