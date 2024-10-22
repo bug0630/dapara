@@ -9,10 +9,10 @@ export default function Header() {
   const isSearchActive = useSelector((state) => state.isSearchActive);
   useEffect(() => {
     let isScrollingDown = false; // 스크롤 방향 추적용 플래그
-    const touchThreshold = 20; // 터치 스크롤 임계값
 
     const handleScroll = (event) => {
-      const deltaY = event.deltaY;
+      const deltaY =
+        event.deltaY || (event.touches && event.touches[0].clientY);
 
       if (deltaY > 1) {
         if (!isScrollingDown) {
@@ -27,28 +27,12 @@ export default function Header() {
       }
     };
 
-    const handleTouchMove = (event) => {
-      const deltaY = event.touches[0].clientY; // 터치 Y 좌표만 사용
-
-      if (deltaY > touchThreshold) {
-        if (!isScrollingDown) {
-          setIsFixed(true); // 임계값 넘으면 true 설정
-          isScrollingDown = true;
-        }
-      } else if (deltaY < -touchThreshold) {
-        if (isScrollingDown) {
-          setIsFixed(false); // 임계값 넘으면 false 설정
-          isScrollingDown = false;
-        }
-      }
-    };
-
     window.addEventListener("wheel", handleScroll); // 마우스 휠 이벤트 추가
-    window.addEventListener("touchmove", handleTouchMove); // 터치 이동 이벤트 추가
+    window.addEventListener("touchmove", handleScroll); // 터치 이동 이벤트 추가
 
     return () => {
       window.removeEventListener("wheel", handleScroll); // 이벤트 제거
-      window.removeEventListener("touchmove", handleTouchMove); // 이벤트 제거
+      window.removeEventListener("touchmove", handleScroll); // 이벤트 제거
     };
   }, []);
 
