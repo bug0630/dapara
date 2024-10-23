@@ -20,7 +20,7 @@ export default function Main() {
       stopOnHover: false,
       animationDuration: 1000,
     }),
-    new Pagination({ type: "fraction" }),
+    new Pagination({ type: "bullet" }),
     new Arrow(),
   ];
   const defaultBanners = [
@@ -45,7 +45,6 @@ export default function Main() {
             <Panel key={index} index={index} imageSrc={banner} />
           ))}
           <ViewportSlot>
-            <div className="flicking-pagination"></div>
             <Control></Control>
           </ViewportSlot>
         </Flicking>
@@ -60,7 +59,6 @@ export default function Main() {
             <Panel key={index} index={index} imageSrc={banner} />
           ))}
           <ViewportSlot>
-            <div className="flicking-pagination "></div>
             <Control></Control>
           </ViewportSlot>
         </Flicking>
