@@ -63,9 +63,9 @@ export default function Main() {
           </ViewportSlot>
         </Flicking>
       )}
-      <section className="list"></section>
-      <BottomNav></BottomNav>
+      <section className="brand"></section>
       <Footer></Footer>
+      <BottomNav></BottomNav>
     </div>
   );
 }

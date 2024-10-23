@@ -2,7 +2,7 @@
 
 .header_bottom {
   height: 50px;
-  border-top: 1px solid rgb(190, 190, 190);
+  border-top: 1px solid variable.$gray;
   background-color: white;
   &.sticky {
     position: -webkit-sticky; /* 사파리 지원 */

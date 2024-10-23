@@ -1,0 +1,7 @@
+@use "../../css/variable.scss";
+footer {
+  background-color: rgb(236, 236, 236);
+  .info {
+    color: variable.$gray;
+  }
+}
