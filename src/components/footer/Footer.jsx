@@ -3,8 +3,8 @@ import "./footer.scss";
 export default function Footer() {
   return (
     <footer>
-      <nav className="width between">
-        <ul className="between">
+      <nav className="width side between">
+        <ul className="policy">
           <li style={{ fontFamily: "GmarketSansMedium" }}>개인정보 처리방침</li>
           <li style={{ fontFamily: "GmarketSansMedium" }}>
             영상정보기기 운영 관리 방침
@@ -15,14 +15,16 @@ export default function Footer() {
           <li>CSR경영 </li>
           <li>사이트맵 </li>
         </ul>
-        <ul className="between">
-          <li>icon1 </li>
-          <li>icon2</li>
-          <li>icon3</li>
+        <ul className="sns">
+          <li>dropdown </li>
+          <li>dropdown</li>
+          <li>dropdown</li>
         </ul>
       </nav>
-      <div className="info">
-        <h3 style={{ fontFamily: "GmarketSansMedium" }}>다 파라</h3>
+      <div className="info width side">
+        <h3 style={{ fontFamily: "GmarketSansMedium", color: "black" }}>
+          (주) 다 파라
+        </h3>
         <span> 대표이사: 강한승,박대중</span>
         <span>사업자 등록번호: 120-88-00767</span>
         <span>365고객센터: 1577-7011(유료)</span>

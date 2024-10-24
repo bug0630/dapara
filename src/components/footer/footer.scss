@@ -1,7 +1,40 @@
 @use "../../css/variable.scss";
 footer {
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(245, 245, 245);
+  padding: clamp(50px, 5vw, 60px) 0;
+  nav {
+    flex-wrap: wrap;
+    gap: 20px;
+    .policy {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      li {
+        margin-right: 10px;
+        @media screen and (max-width: variable.$mobile) {
+          margin-right: 2px;
+        }
+      }
+      @media screen and (max-width: variable.$tablet) {
+        width: 100%;
+      }
+    }
+    .sns {
+      display: flex;
+      gap: 20px;
+      @media screen and (max-width: variable.$tablet) {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
   .info {
     color: variable.$gray;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h3 {
+      padding: 50px 0;
+    }
   }
 }
