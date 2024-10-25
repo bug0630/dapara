@@ -1,0 +1,23 @@
+@use "../../css/variable.scss";
+$background: rgb(255, 255, 255);
+.dropdown {
+  position: relative;
+  width: 100%;
+  background-color: $background;
+  button {
+    width: 100%;
+    background-color: $background;
+    border: 1px solid variable.$gray;
+    padding: 10px;
+  }
+  .list {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    border: 1px solid variable.$gray;
+    li {
+      padding: 10px;
+      background-color: $background;
+    }
+  }
+}

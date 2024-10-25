@@ -19,12 +19,13 @@ footer {
         width: 100%;
       }
     }
-    .sns {
-      display: flex;
-      gap: 20px;
+    .partners {
+      width: 200px;
       @media screen and (max-width: variable.$tablet) {
-        width: 100%;
         justify-content: center;
+      }
+      @media screen and (max-width: variable.$mobile) {
+        width: 100%;
       }
     }
   }
