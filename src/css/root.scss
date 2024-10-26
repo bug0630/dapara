@@ -61,6 +61,9 @@ a {
 .gap {
   gap: clamp(10px, 3vw, 20px);
 }
+.rotate {
+  transform: rotate(180deg);
+}
 .mob_ui {
   @media screen and (min-width: $pc) {
     display: none;

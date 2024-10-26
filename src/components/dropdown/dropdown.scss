@@ -6,6 +6,7 @@ $background: rgb(255, 255, 255);
   background-color: $background;
   button {
     width: 100%;
+    align-items: center;
     background-color: $background;
     border: 1px solid variable.$gray;
     padding: 10px;
@@ -13,7 +14,6 @@ $background: rgb(255, 255, 255);
   .list {
     position: absolute;
     width: 100%;
-    text-align: center;
     border: 1px solid variable.$gray;
     li {
       padding: 10px;

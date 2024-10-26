@@ -19,7 +19,7 @@ export default function Footer() {
         <ul className="partners center">
           <Dropdown
             menuItems={["Partners", "Partners 2", "Partners 3", "Partners 4"]}
-            defaultItem={"다 파라"}
+            defaultItem={"파트너 사이트"}
           ></Dropdown>
         </ul>
       </nav>
