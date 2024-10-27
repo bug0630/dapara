@@ -63,7 +63,9 @@ export default function Main() {
           </ViewportSlot>
         </Flicking>
       )}
-      <section className="brand"></section>
+      <section className="brand">
+        <h2>오늘의 브랜드</h2>
+      </section>
       <Footer></Footer>
       <BottomNav></BottomNav>
     </div>
