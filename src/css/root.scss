@@ -41,7 +41,12 @@ a {
   all: unset;
   cursor: pointer;
 }
-
+h2 {
+  font-size: clamp(20px, 4vw, 28px);
+}
+h3 {
+  font-size: clamp(16px, 3.2vw, 20px);
+}
 .between {
   display: flex;
   justify-content: space-between;

@@ -3,7 +3,7 @@ import "./dropdown.scss";
 
 function Dropdown({ menuItems, defaultItem }) {
   // 드롭다운이 열려 있는지 여부를 관리하는 상태
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [dropDownOpen, setDropdownOpen] = useState(false);
   // 현재 선택된 드롭다운 항목을 관리하는 상태 (초기값은 defaultItem)
   const [selectedItem, setSelectedItem] = useState(defaultItem);
   // 키보드 탐색 시 현재 포커스된 항목의 인덱스를 관리하는 상태 (초기값 -1은 아무 항목도 선택되지 않은 상태)
@@ -13,13 +13,13 @@ function Dropdown({ menuItems, defaultItem }) {
 
   // 드롭다운의 열림/닫힘 상태를 전환하고, 열릴 때는 포커스를 첫 번째 항목으로 초기화
   const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
+    setDropdownOpen((prev) => !prev);
     setCurrentFocus(0);
   };
 
   // 드롭다운을 닫고 포커스를 초기화
   const closeDropdown = () => {
-    setIsDropdownOpen(false);
+    setDropdownOpen(false);
     setCurrentFocus(-1);
   };
 
@@ -62,11 +62,11 @@ function Dropdown({ menuItems, defaultItem }) {
 
   // 드롭다운이 열리거나 currentFocus가 변경될 때 현재 포커스된 항목에 포커스를 설정
   useEffect(() => {
-    if (isDropdownOpen && dropdownRef.current) {
+    if (dropDownOpen && dropdownRef.current) {
       const items = dropdownRef.current.querySelectorAll("li");
       items[currentFocus]?.focus();
     }
-  }, [isDropdownOpen, currentFocus]);
+  }, [dropDownOpen, currentFocus]);
 
   // 드롭다운 외부를 클릭했을 때 드롭다운을 닫도록 처리하는 효과
   useEffect(() => {
@@ -89,7 +89,7 @@ function Dropdown({ menuItems, defaultItem }) {
         onClick={toggleDropdown}
         onKeyDown={handleKeyDown}
         aria-haspopup="true"
-        aria-expanded={isDropdownOpen}
+        aria-expanded={dropDownOpen}
         aria-activedescendant={
           currentFocus >= 0 ? `dropdown-item-${currentFocus}` : undefined
         }
@@ -97,15 +97,15 @@ function Dropdown({ menuItems, defaultItem }) {
         {selectedItem}{" "}
         <span
           className={`material-symbols-outlined ${
-            isDropdownOpen ? "rotate" : ""
+            dropDownOpen ? "rotate" : ""
           }`}
         >
           arrow_drop_down
         </span>
       </button>
 
-      {/* 드롭다운 메뉴 (isDropdownOpen이 true일 때 표시됨) */}
-      {isDropdownOpen && (
+      {/* 드롭다운 메뉴 (DropdownOpen이 true일 때 표시됨) */}
+      {dropDownOpen && (
         <ul className="list" role="listbox" onKeyDown={handleMenuKeyDown}>
           {menuItems.map((item, index) => (
             <li
