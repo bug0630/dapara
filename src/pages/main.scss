@@ -71,7 +71,6 @@
       }
     }
   }
-
   // brandSection
   .brand {
     padding: clamp(50px, 10vw, 100px) 0;
@@ -81,6 +80,28 @@
       padding: 10px 0;
     }
     .product {
+      display: flex;
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      li {
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid variable.$gray;
+        border-radius: 30px;
+        img {
+          width: 60%;
+        }
+      }
+      .flicking-viewport {
+        width: 100%;
+      }
       .control {
         position: absolute;
         width: 100%;
