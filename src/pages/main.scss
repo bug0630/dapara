@@ -8,8 +8,8 @@
       max-width: 1920px;
       .material-symbols-outlined {
         font-variation-settings: "FILL" 0, "wght" 100, "GRAD" 0, "opsz" 24;
-        font-size: clamp(16px, 2vw, 24px);
-        padding: 10px clamp(10px, 1vw, 15px);
+        font-size: clamp(24px, 3vw, 36px);
+        padding: 5px;
       }
     }
     // pagination, arrow옵션
@@ -53,16 +53,10 @@
       @media screen and (min-width: 787px) {
         aspect-ratio: 128/55;
       }
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        -webkit-user-drag: none;
-      }
       img {
         height: 100%;
         cursor: pointer;
-        -webkit-user-drag: none;
+        // -webkit-user-drag: none;
         @media screen and (max-width: 786px) {
           width: 100%;
           min-width: 600px;
@@ -72,6 +66,7 @@
     }
   }
   // brandSection
+  $radious: 10px;
   .brand {
     padding: clamp(50px, 10vw, 100px) 0;
     h2,
@@ -100,7 +95,7 @@
         justify-content: center;
         align-items: center;
         border: 1px solid variable.$gray;
-        border-radius: 30px;
+        border-radius: $radious;
         img {
           height: 100%;
         }
@@ -110,7 +105,7 @@
         .panel {
           width: 100%;
           aspect-ratio: 1/1;
-          border-radius: 30px;
+          border-radius: $radious;
           overflow: hidden;
         }
         img {
@@ -131,9 +126,14 @@
           display: flex;
           position: absolute;
           right: 5%;
-          background-color: rgb(77, 77, 77, 0.3);
-          color: white;
-          border-radius: 30px;
+          color: black;
+          gap: 10px;
+          .material-symbols-outlined {
+            font-size: 30px;
+            padding: 5px;
+            background-color: rgba(255, 255, 255);
+            border-radius: $radious;
+          }
         }
       }
     }

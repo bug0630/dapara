@@ -28,7 +28,7 @@ export default function Main() {
       duration: 5000,
       direction: "NEXT",
       stopOnHover: false,
-      animationDuration: 1000,
+      animationDuration: 0,
     }),
     new Arrow(),
   ];
@@ -95,7 +95,13 @@ export default function Main() {
               </li>
             ))}
           </ul>
-          <Flicking plugins={productPlugins} align="prev" circular={true}>
+          <Flicking
+            plugins={productPlugins}
+            duration="0"
+            align="prev"
+    
+            circular={true}
+          >
             {product2.map((banner, index) => (
               <Panel key={index} index={index} imageSrc={banner} />
             ))}

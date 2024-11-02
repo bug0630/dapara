@@ -6,10 +6,10 @@ export default function Control() {
       <div className="flicking-pagination"></div>
       <div className="arrow">
         <span className="flicking-arrow-prev material-symbols-outlined">
-          arrow_back_ios
+          chevron_left
         </span>
         <span className="flicking-arrow-next  material-symbols-outlined">
-          arrow_forward_ios
+          chevron_right
         </span>
       </div>
     </div>
