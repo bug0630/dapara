@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dapara/static/css/main.fdb54d11.css",
-    "main.js": "/dapara/static/js/main.fca728a2.js",
+    "main.css": "/dapara/static/css/main.4dfd4154.css",
+    "main.js": "/dapara/static/js/main.fbbf87e4.js",
     "static/media/GmarketSansTTFBold.ttf": "/dapara/static/media/GmarketSansTTFBold.69428064ef8eee25be33.ttf",
     "static/media/GmarketSansTTFMedium.ttf": "/dapara/static/media/GmarketSansTTFMedium.d4bac6b182bed73c9375.ttf",
     "static/media/GmarketSansTTFLight.ttf": "/dapara/static/media/GmarketSansTTFLight.efaa8f19ead1555b1c39.ttf",
@@ -11,19 +11,19 @@
     "static/media/banner3.png": "/dapara/static/media/banner3.5672b4a9d581f2241b26.png",
     "static/media/banner1-2.png": "/dapara/static/media/banner1-2.a245a6288037ac8f44f2.png",
     "static/media/banner1.png": "/dapara/static/media/banner1.daf91c6f303d8461426a.png",
-    "static/media/Component 90.png": "/dapara/static/media/Component 90.e2c0c7ff520bf959632b.png",
-    "static/media/Component 93.png": "/dapara/static/media/Component 93.4859f49a812837767b80.png",
+    "static/media/product2-2.png": "/dapara/static/media/product2-2.e2c0c7ff520bf959632b.png",
+    "static/media/product2-1.png": "/dapara/static/media/product2-1.4859f49a812837767b80.png",
     "static/media/product4.png": "/dapara/static/media/product4.dc75a438f99acdc47b7e.png",
     "static/media/product3.png": "/dapara/static/media/product3.d3f46825d1a4e6eaa38a.png",
     "static/media/product2.png": "/dapara/static/media/product2.13d38f616d910ce5fdb6.png",
     "static/media/product1.png": "/dapara/static/media/product1.69734bb42cd273e8665d.png",
     "static/media/logo.png": "/dapara/static/media/logo.abc588b1d175d6d8e5ad.png",
     "index.html": "/dapara/index.html",
-    "main.fdb54d11.css.map": "/dapara/static/css/main.fdb54d11.css.map",
-    "main.fca728a2.js.map": "/dapara/static/js/main.fca728a2.js.map"
+    "main.4dfd4154.css.map": "/dapara/static/css/main.4dfd4154.css.map",
+    "main.fbbf87e4.js.map": "/dapara/static/js/main.fbbf87e4.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdb54d11.css",
-    "static/js/main.fca728a2.js"
+    "static/css/main.4dfd4154.css",
+    "static/js/main.fbbf87e4.js"
   ]
 }
