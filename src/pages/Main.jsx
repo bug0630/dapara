@@ -10,6 +10,7 @@ import BottomNav from "../components/header/BottomNav";
 import Control from "../components/carousel/Control";
 import Footer from "../components/footer/Footer";
 import "./main.scss";
+import Button from "../components/button/Button";
 export default function Main() {
   const smallScreen = useMediaQuery({ query: "(max-width: 786px)" });
   const images = require.context("../assets/img", false, /\.(png|jpe?g|svg)$/);
@@ -90,7 +91,7 @@ export default function Main() {
         <div className="product side">
           <ul>
             {product.map((index) => (
-              <li>
+              <li key={index}>
                 <img src={index} alt="product" />
               </li>
             ))}
@@ -99,7 +100,6 @@ export default function Main() {
             plugins={productPlugins}
             duration="0"
             align="prev"
-    
             circular={true}
           >
             {product2.map((banner, index) => (
@@ -110,6 +110,7 @@ export default function Main() {
             </ViewportSlot>
           </Flicking>
         </div>
+        <Button></Button>
       </section>
       <Footer></Footer>
       <BottomNav></BottomNav>
