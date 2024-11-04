@@ -110,7 +110,7 @@ export default function Main() {
             </ViewportSlot>
           </Flicking>
         </div>
-        <Button></Button>
+        <Button text="브랜드 상품"></Button>
       </section>
       <Footer></Footer>
       <BottomNav></BottomNav>

@@ -74,10 +74,13 @@
       text-align: center;
       padding: 10px 0;
     }
+    .buttonComponents {
+      margin: 0 auto;
+    }
     .product {
       display: flex;
       gap: 20px;
-      padding-top: clamp(20px, 5vw, 50px);
+      padding: clamp(20px, 5vw, 50px) 0;
       @media screen and (max-width: 786px) {
         flex-direction: column;
       }

@@ -1,0 +1,19 @@
+@use "../../css/variable.scss";
+.buttonComponents {
+  padding: clamp(10px, 2vw, 20px) clamp(50px, 10vw, 100px);
+  border-radius: 30px;
+  border: 1px solid variable.$gray;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+
+  &:hover .propText {
+    color: variable.$main-color;
+  }
+  .propText {
+    color: variable.$sub-color;
+    transition-duration: 0.2s;
+  }
+}
