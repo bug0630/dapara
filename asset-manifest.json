@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dapara/static/css/main.2c6f7dbb.css",
-    "main.js": "/dapara/static/js/main.e3bccb34.js",
+    "main.css": "/dapara/static/css/main.f320a405.css",
+    "main.js": "/dapara/static/js/main.c344492d.js",
     "static/media/GmarketSansTTFBold.ttf": "/dapara/static/media/GmarketSansTTFBold.69428064ef8eee25be33.ttf",
     "static/media/GmarketSansTTFMedium.ttf": "/dapara/static/media/GmarketSansTTFMedium.d4bac6b182bed73c9375.ttf",
     "static/media/GmarketSansTTFLight.ttf": "/dapara/static/media/GmarketSansTTFLight.efaa8f19ead1555b1c39.ttf",
@@ -19,11 +19,11 @@
     "static/media/product1.png": "/dapara/static/media/product1.69734bb42cd273e8665d.png",
     "static/media/logo.png": "/dapara/static/media/logo.abc588b1d175d6d8e5ad.png",
     "index.html": "/dapara/index.html",
-    "main.2c6f7dbb.css.map": "/dapara/static/css/main.2c6f7dbb.css.map",
-    "main.e3bccb34.js.map": "/dapara/static/js/main.e3bccb34.js.map"
+    "main.f320a405.css.map": "/dapara/static/css/main.f320a405.css.map",
+    "main.c344492d.js.map": "/dapara/static/js/main.c344492d.js.map"
   },
   "entrypoints": [
-    "static/css/main.2c6f7dbb.css",
-    "static/js/main.e3bccb34.js"
+    "static/css/main.f320a405.css",
+    "static/js/main.c344492d.js"
   ]
 }
