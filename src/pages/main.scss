@@ -68,7 +68,7 @@
   // brandSection
   $radious: 10px;
   .brand {
-    padding: clamp(50px, 10vw, 100px) 0;
+    padding: clamp(50px, 10vw, 100px) clamp(20px, 5vw, 50px);
     h2,
     h3 {
       text-align: center;
@@ -99,6 +99,7 @@
         align-items: center;
         border: 1px solid variable.$gray;
         border-radius: $radious;
+        a,
         img {
           height: 100%;
         }

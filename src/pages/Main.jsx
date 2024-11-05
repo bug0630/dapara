@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/header/Header";
 import HeaderNav from "../components/header/HeaderNav";
 import { useMediaQuery } from "react-responsive";
+import List from "../components/List/List";
 import Flicking, { ViewportSlot } from "@egjs/react-flicking";
 import { AutoPlay, Arrow, Pagination } from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
@@ -60,7 +61,11 @@ export default function Main() {
         {smallScreen ? (
           <Flicking plugins={plugins} align="prev" circular={true}>
             {smallBanners.map((banner, index) => (
-              <Panel key={index} index={index} imageSrc={banner} />
+              <Panel
+                key={index}
+                path={`/banner${index + 1}`}
+                imageSrc={banner}
+              />
             ))}
             <ViewportSlot>
               <Control></Control>
@@ -73,8 +78,12 @@ export default function Main() {
           ""
         ) : (
           <Flicking plugins={plugins} align="prev" circular={true}>
-            {defaultBanners.map((banner, index) => (
-              <Panel key={index} index={index} imageSrc={banner} />
+            {defaultBanners.map((banner2, index) => (
+              <Panel
+                key={index}
+                path={`/banner2-${index + 1}`}
+                imageSrc={banner2}
+              />
             ))}
             <ViewportSlot>
               <Control></Control>
@@ -88,29 +97,28 @@ export default function Main() {
           다 파라가 엄선한 오늘의 가장 <span className="pink">HOT</span>한 상품
           !
         </h3>
-        <div className="product side">
-          <ul>
-            {product.map((index) => (
-              <li key={index}>
-                <img src={index} alt="product" />
-              </li>
-            ))}
-          </ul>
+        <div className="product">
+          <List list={product} />
+
           <Flicking
             plugins={productPlugins}
             duration="0"
             align="prev"
             circular={true}
           >
-            {product2.map((banner, index) => (
-              <Panel key={index} index={index} imageSrc={banner} />
+            {product2.map((product2, index) => (
+              <Panel
+                key={index}
+                path={`/product2-${index + 1}`}
+                imageSrc={product2}
+              />
             ))}
             <ViewportSlot>
               <Control></Control>
             </ViewportSlot>
           </Flicking>
         </div>
-        <Button text="브랜드 상품"></Button>
+        <Button text="브랜드 상품" path="브랜드"></Button>
       </section>
       <Footer></Footer>
       <BottomNav></BottomNav>
