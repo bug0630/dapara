@@ -1,6 +1,6 @@
 @use "../css/variable.scss";
 .main {
-  // Carousel
+  // 배너 캐러셀
   .banner {
     .flicking-viewport {
       margin: 0 auto;
@@ -66,9 +66,8 @@
     }
   }
   // brandSection
-  $radious: 10px;
   .brand {
-    padding: clamp(50px, 10vw, 100px) clamp(20px, 5vw, 50px);
+    $radious: 10px;
     h2,
     h3 {
       text-align: center;
@@ -139,6 +138,27 @@
             background-color: rgba(255, 255, 255);
             border-radius: $radious;
           }
+        }
+      }
+    }
+  }
+  .today {
+    background-color: rgb(245, 245, 245);
+    h2,
+    h3 {
+      text-align: center;
+      padding: 10px 0;
+    }
+    .tab {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      li {
+        border-radius: 30px;
+        padding: 20px;
+        &.focus {
+          background-color: variable.$sub-color;
+          color: white;
         }
       }
     }

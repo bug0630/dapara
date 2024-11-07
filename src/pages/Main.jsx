@@ -12,6 +12,7 @@ import Control from "../components/carousel/Control";
 import Footer from "../components/footer/Footer";
 import "./main.scss";
 import Button from "../components/button/Button";
+import Tab from "../components/tab/Tab";
 export default function Main() {
   const smallScreen = useMediaQuery({ query: "(max-width: 786px)" });
   const images = require.context("../assets/img", false, /\.(png|jpe?g|svg)$/);
@@ -91,15 +92,14 @@ export default function Main() {
           </Flicking>
         )}
       </section>
-      <section className="brand width">
+      <section className="brand width sectionPadding">
         <h2>오늘의 브랜드</h2>
         <h3>
           다 파라가 엄선한 오늘의 가장 <span className="pink">HOT</span>한 상품
           !
         </h3>
         <div className="product">
-          <List list={product} />
-
+          <List list={product} path="제품" />
           <Flicking
             plugins={productPlugins}
             duration="0"
@@ -119,6 +119,14 @@ export default function Main() {
           </Flicking>
         </div>
         <Button text="브랜드 상품" path="브랜드"></Button>
+      </section>
+      <section className="today sectionPadding">
+        <h2>오늘의 SALE !</h2>
+        <h3>
+          한 달에 한 번 찾아오는 다파라의 특별한{" "}
+          <span className="blue">SALE</span> 주간 !
+        </h3>
+        <Tab list={["오늘만 세일", "이번주 세일"]}></Tab>
       </section>
       <Footer></Footer>
       <BottomNav></BottomNav>

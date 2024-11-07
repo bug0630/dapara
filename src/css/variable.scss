@@ -1,4 +1,5 @@
 $side-padding: clamp(20px, 3vw, 40px);
+$section-padding: clamp(50px, 10vw, 100px) clamp(20px, 3vw, 40px);
 $mobile: 480px;
 $tablet: 1280px;
 $pc: $tablet + 1;

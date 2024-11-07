@@ -63,6 +63,9 @@ h3 {
 .side {
   padding: 0 $side-padding;
 }
+.sectionPadding {
+  padding: $section-padding;
+}
 .gap {
   gap: clamp(10px, 3vw, 20px);
 }
@@ -94,6 +97,5 @@ h3 {
   }
   img {
     cursor: pointer;
-    // -webkit-user-drag: none;
   }
 }
