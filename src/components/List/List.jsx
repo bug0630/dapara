@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function List({ list, path }) {
   return (
-    <ul>
+    <ul className="list">
       {list.map((src, i) => (
         <li key={i}>
           <Link to={path + `${i + 1}`}>

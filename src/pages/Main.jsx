@@ -149,23 +149,26 @@ export default function Main() {
           <span className="blue">SALE</span> 주간 !
         </h3>
         <Tab list={["오늘만 세일", "이번주 세일"]}></Tab>
-        <Flicking
-          plugins={productPlugins2}
-          duration="0"
-          align="center"
-          circular={true}
-        >
-          {sale.map((product2, index) => (
-            <Panel
-              key={index}
-              path={`/product2-${index + 1}`}
-              imageSrc={product2}
-            />
-          ))}
-          <ViewportSlot>
-            <Control></Control>
-          </ViewportSlot>
-        </Flicking>
+        {smallScreen ? (
+          <Flicking
+            plugins={productPlugins2}
+            duration={2000}
+            align="center"
+            circular={true}
+          >
+            {sale.map((product2, index) => (
+              <Panel
+                key={index}
+                path={`/product2-${index + 1}`}
+                imageSrc={product2}
+              />
+            ))}
+            <ViewportSlot>
+              <Control />
+            </ViewportSlot>
+          </Flicking>
+        ) : null}
+        {smallScreen ? null : <List list={sale} path="세일"></List>}
       </section>
       <Footer></Footer>
       <BottomNav></BottomNav>

@@ -149,6 +149,11 @@
       text-align: center;
       padding: 10px 0;
     }
+    list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
     .tab {
       display: flex;
       justify-content: center;
@@ -169,7 +174,10 @@
       width: 100%;
     }
     .panel {
-      width: 300px;
+      width: 240px;
+    }
+    img {
+      -webkit-user-drag: none;
     }
   }
 }
