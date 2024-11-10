@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-export default React.forwardRef(({ path, imageSrc }, ref) => (
+
+import Card from "../card/Card";
+
+const Panel = React.forwardRef(({ path, imageSrc }, ref) => (
   <div className="panel" ref={ref}>
-    <Link to={path}>
-      <img src={imageSrc} alt={path} />
-    </Link>
+    <Card path={path} imgSrc={imageSrc} />
   </div>
 ));
+
+export default Panel;

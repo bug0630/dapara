@@ -1,17 +1,17 @@
 import React from "react";
-import Header from "../components/header/Header";
-import HeaderNav from "../components/header/HeaderNav";
+import "./main.scss";
 import { useMediaQuery } from "react-responsive";
 import { useState, useEffect } from "react";
-import List from "../components/List/List";
+import Header from "../components/header/Header";
 import Flicking, { ViewportSlot } from "@egjs/react-flicking";
 import { AutoPlay, Arrow, Pagination } from "@egjs/flicking-plugins";
+import HeaderNav from "../components/header/HeaderNav";
+import List from "../components/List/List";
 import "@egjs/react-flicking/dist/flicking.css";
 import Panel from "../components/carousel/Panel";
 import BottomNav from "../components/header/BottomNav";
 import Control from "../components/carousel/Control";
 import Footer from "../components/footer/Footer";
-import "./main.scss";
 import Button from "../components/button/Button";
 import Tab from "../components/tab/Tab";
 export default function Main() {
@@ -82,7 +82,12 @@ export default function Main() {
       <section className="banner">
         {" "}
         {smallScreen ? (
-          <Flicking plugins={plugins} align="prev" circular={true}>
+          <Flicking
+            plugins={plugins}
+            align="prev"
+            circular={true}
+            preventDefaultOnDrag={true}
+          >
             {smallBanners.map((banner, index) => (
               <Panel
                 key={index}
@@ -100,7 +105,12 @@ export default function Main() {
         {smallScreen ? (
           ""
         ) : (
-          <Flicking plugins={plugins} align="prev" circular={true}>
+          <Flicking
+            plugins={plugins}
+            align="prev"
+            circular={true}
+            preventDefaultOnDrag={true}
+          >
             {defaultBanners.map((banner2, index) => (
               <Panel
                 key={index}
@@ -152,7 +162,7 @@ export default function Main() {
         {smallScreen ? (
           <Flicking
             plugins={productPlugins2}
-            duration={2000}
+            duration={500}
             align="center"
             circular={true}
           >

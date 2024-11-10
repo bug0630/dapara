@@ -49,6 +49,7 @@
     // 캐러셀 이미지
     .panel {
       overflow: hidden;
+      width: 100%;
       max-width: 1920px;
       @media screen and (min-width: 787px) {
         aspect-ratio: 128/55;
@@ -99,6 +100,7 @@
         border: 1px solid variable.$gray;
         border-radius: $radious;
         a,
+        .card,
         img {
           height: 100%;
         }
@@ -149,21 +151,39 @@
       text-align: center;
       padding: 10px 0;
     }
-    list {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
     .tab {
       display: flex;
       justify-content: center;
       gap: 50px;
+      padding: 50px 0;
       li {
         border-radius: 30px;
         padding: 20px;
         &.focus {
           background-color: variable.$sub-color;
           color: white;
+        }
+      }
+    }
+    .list {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      li {
+        width: 20%;
+        overflow: hidden;
+        background-color: white;
+        img {
+          width: 100%;
+        }
+        a {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
@@ -174,10 +194,17 @@
       width: 100%;
     }
     .panel {
-      width: 240px;
+      width: 300px;
     }
-    img {
-      -webkit-user-drag: none;
+    .control {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      top: 50%;
+      .arrow {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }
